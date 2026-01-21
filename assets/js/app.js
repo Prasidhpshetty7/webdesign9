@@ -6,13 +6,29 @@ let ctaLinks = document.querySelectorAll(
 let projectLinks = document.querySelectorAll(".project-box__link a ion-icon");
 console.log(projectLinks);
 
-//  Mouse effect
-window.addEventListener("mousemove", cursor);
+//  Mouse effect with smooth animation
+let mouseX = 0;
+let mouseY = 0;
+let cursorX = 0;
+let cursorY = 0;
+let speed = 0.15; // Adjust this value for smoothness (0.1 = slower, 0.3 = faster)
 
-function cursor(e) {
-  mouseCursor.style.top = e.pageY + "px";
-  mouseCursor.style.left = e.pageX + "px";
+window.addEventListener("mousemove", (e) => {
+  mouseX = e.pageX;
+  mouseY = e.pageY;
+});
+
+function animateCursor() {
+  // Smooth interpolation
+  cursorX += (mouseX - cursorX) * speed;
+  cursorY += (mouseY - cursorY) * speed;
+  
+  mouseCursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+  
+  requestAnimationFrame(animateCursor);
 }
+
+animateCursor();
 
 ctaLinks.forEach((link) => {
   link.addEventListener("mouseover", () => {
@@ -98,16 +114,28 @@ tl.fromTo(".effect-3", { opacity: 0 }, { opacity: 1, duration: 1 });
 tl.fromTo(".effect-4", { opacity: 0 }, { opacity: 1, duration: 1 });
 tl.fromTo(".inner", { opacity: 0 }, { opacity: 1, duration: 0.3 }, "-=1");
 
-/////Dark theme toggle
+/////Dark theme toggle with localStorage
 var checkbox = document.querySelector("input[name=theme]");
 
+// Load saved theme from localStorage on page load
+const currentTheme = localStorage.getItem("theme") || "dark";
+document.documentElement.setAttribute("data-theme", currentTheme);
+
+// Set checkbox state based on saved theme
+if (currentTheme === "light") {
+  checkbox.checked = true;
+}
+
+// Save theme preference when changed
 checkbox.addEventListener("change", function () {
   if (this.checked) {
     trans();
     document.documentElement.setAttribute("data-theme", "light");
+    localStorage.setItem("theme", "light");
   } else {
     trans();
     document.documentElement.setAttribute("data-theme", "dark");
+    localStorage.setItem("theme", "dark");
   }
 });
 
