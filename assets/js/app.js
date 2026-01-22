@@ -154,6 +154,17 @@ if (contactForm && successModal) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
+    // Get the user's name from the form
+    const userName = document.getElementById("name").value.trim();
+    const userNameSpan = document.getElementById("userName");
+    
+    // Display personalized message with name
+    if (userName && userNameSpan) {
+      userNameSpan.textContent = ", " + userName;
+    } else if (userNameSpan) {
+      userNameSpan.textContent = "";
+    }
+
     // Show success modal
     successModal.style.display = "flex";
     document.body.style.overflow = "hidden";
