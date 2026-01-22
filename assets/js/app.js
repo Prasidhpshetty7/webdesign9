@@ -145,3 +145,32 @@ let trans = () => {
     document.documentElement.classList.remove("transition");
   }, 1200);
 };
+
+/////Contact Form Handler
+const contactForm = document.getElementById("contactForm");
+const successModal = document.getElementById("successModal");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    // Show success modal
+    successModal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+
+    // Reset form
+    contactForm.reset();
+  });
+}
+
+function closeSuccessModal() {
+  successModal.style.display = "none";
+  document.body.style.overflow = "auto";
+}
+
+// Close modal when clicking outside
+successModal.addEventListener("click", function (e) {
+  if (e.target === successModal) {
+    closeSuccessModal();
+  }
+});

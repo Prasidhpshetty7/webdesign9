@@ -424,7 +424,7 @@
               Got a question, proposal or project or want to work <br />
               together on something? Feel free to reach out.
             </div>
-            <form action="POST" data-netlify="true">
+            <form id="contactForm">
               <div class="input-row">
                 <div class="side"
                   ><label for="name">Your Name</label
@@ -460,6 +460,38 @@
             </form>
           </div>
         </section>
+
+        <!-- Success Modal -->
+        <div class="success-modal" id="successModal">
+          <div class="success-modal-content">
+            <div class="success-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                <circle class="success-circle" cx="26" cy="26" r="25" fill="none"/>
+                <path class="success-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+              </svg>
+            </div>
+            <h2>Message Sent Successfully!</h2>
+            <p>Thanks for reaching out! I'll get back to you when I'm free. If you want to contact me directly, feel free to connect on:</p>
+            <div class="social-links">
+              <a href="https://t.me/FINALSKULLL" target="_blank" rel="noopener noreferrer" title="Telegram">
+                <ion-icon name="paper-plane-outline"></ion-icon>
+              </a>
+              <a href="https://x.com/ShettyPrasidh7" target="_blank" rel="noopener noreferrer" title="Twitter/X">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+              <a href="https://www.instagram.com/mr__shxtty/" target="_blank" rel="noopener noreferrer" title="Instagram">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+              <a href="https://www.linkedin.com/in/prasidhpshetty/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+              <a href="mailto:shettyprasidh262@gmail.com" title="Email">
+                <ion-icon name="mail-outline"></ion-icon>
+              </a>
+            </div>
+            <button class="close-modal" onclick="closeSuccessModal()">Close</button>
+          </div>
+        </div>
       </main>
 
       <footer class="footer">
