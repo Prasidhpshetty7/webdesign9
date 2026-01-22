@@ -150,7 +150,7 @@ let trans = () => {
 const contactForm = document.getElementById("contactForm");
 const successModal = document.getElementById("successModal");
 
-if (contactForm) {
+if (contactForm && successModal) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
@@ -161,16 +161,19 @@ if (contactForm) {
     // Reset form
     contactForm.reset();
   });
+
+  // Close modal when clicking outside
+  successModal.addEventListener("click", function (e) {
+    if (e.target === successModal) {
+      closeSuccessModal();
+    }
+  });
 }
 
 function closeSuccessModal() {
-  successModal.style.display = "none";
-  document.body.style.overflow = "auto";
-}
-
-// Close modal when clicking outside
-successModal.addEventListener("click", function (e) {
-  if (e.target === successModal) {
-    closeSuccessModal();
+  const modal = document.getElementById("successModal");
+  if (modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "auto";
   }
-});
+}
