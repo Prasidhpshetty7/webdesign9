@@ -462,34 +462,34 @@
         </section>
 
         <!-- Success Modal -->
-        <div class="success-modal" id="successModal" style="display: none;">
-          <div class="success-modal-content" style="background: #0b0b0f; border: 2px solid #34a3a3; color: white;">
-            <div class="success-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                <circle class="success-circle" cx="26" cy="26" r="25" fill="none" stroke="#34a3a3"/>
-                <path class="success-check" fill="none" stroke="#34a3a3" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        <div class="success-modal" id="successModal" style="display: none; position: fixed; z-index: 99999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); justify-content: center; align-items: center;">
+          <div class="success-modal-content" style="background: #0b0b0f; border: 3px solid #34a3a3; color: white; border-radius: 20px; padding: 3rem 2.5rem; max-width: 500px; width: 90%; text-align: center; position: relative; box-shadow: 0 10px 40px rgba(52, 163, 163, 0.5);">
+            <div class="success-icon" style="width: 80px; height: 80px; margin: 0 auto;">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52" style="width: 100%; height: 100%;">
+                <circle class="success-circle" cx="26" cy="26" r="25" fill="none" stroke="#34a3a3" stroke-width="2"/>
+                <path class="success-check" fill="none" stroke="#34a3a3" stroke-width="3" stroke-linecap="round" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
               </svg>
             </div>
-            <h2 style="color: white; font-size: 1.8rem; margin: 1.5rem 0 1rem;">Message Sent Successfully!</h2>
-            <p style="color: #ffffffcc; font-size: 1.1rem; line-height: 1.8;">Thanks for reaching out<span id="userName" style="color: #34a3a3; font-weight: 600;"></span>! I'll get back to you when I'm free. If you want to contact me directly, feel free to connect on:</p>
-            <div class="social-links">
-              <a href="https://t.me/FINALSKULLL" target="_blank" rel="noopener noreferrer" title="Telegram">
-                <ion-icon name="paper-plane-outline"></ion-icon>
+            <h2 style="color: white; font-size: 1.8rem; margin: 1.5rem 0 1rem; font-weight: 600;">Message Sent Successfully!</h2>
+            <p style="color: #ffffffcc; font-size: 1.1rem; line-height: 1.8; margin-bottom: 2rem;">Thanks for reaching out<span id="userName" style="color: #34a3a3; font-weight: 600;"></span>! I'll get back to you when I'm free. If you want to contact me directly, feel free to connect on:</p>
+            <div class="social-links" style="display: flex; justify-content: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap;">
+              <a href="https://t.me/FINALSKULLL" target="_blank" rel="noopener noreferrer" title="Telegram" style="width: 50px; height: 50px; border-radius: 50%; background: black; border: 2px solid #34a3a3; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                <ion-icon name="paper-plane-outline" style="font-size: 24px; color: #34a3a3;"></ion-icon>
               </a>
-              <a href="https://x.com/ShettyPrasidh7" target="_blank" rel="noopener noreferrer" title="Twitter/X">
-                <ion-icon name="logo-twitter"></ion-icon>
+              <a href="https://x.com/ShettyPrasidh7" target="_blank" rel="noopener noreferrer" title="Twitter/X" style="width: 50px; height: 50px; border-radius: 50%; background: black; border: 2px solid #34a3a3; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                <ion-icon name="logo-twitter" style="font-size: 24px; color: #34a3a3;"></ion-icon>
               </a>
-              <a href="https://www.instagram.com/mr__shxtty/" target="_blank" rel="noopener noreferrer" title="Instagram">
-                <ion-icon name="logo-instagram"></ion-icon>
+              <a href="https://www.instagram.com/mr__shxtty/" target="_blank" rel="noopener noreferrer" title="Instagram" style="width: 50px; height: 50px; border-radius: 50%; background: black; border: 2px solid #34a3a3; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                <ion-icon name="logo-instagram" style="font-size: 24px; color: #34a3a3;"></ion-icon>
               </a>
-              <a href="https://www.linkedin.com/in/prasidhpshetty/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
-                <ion-icon name="logo-linkedin"></ion-icon>
+              <a href="https://www.linkedin.com/in/prasidhpshetty/" target="_blank" rel="noopener noreferrer" title="LinkedIn" style="width: 50px; height: 50px; border-radius: 50%; background: black; border: 2px solid #34a3a3; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                <ion-icon name="logo-linkedin" style="font-size: 24px; color: #34a3a3;"></ion-icon>
               </a>
-              <a href="mailto:shettyprasidh262@gmail.com" title="Email">
-                <ion-icon name="mail-outline"></ion-icon>
+              <a href="mailto:shettyprasidh262@gmail.com" title="Email" style="width: 50px; height: 50px; border-radius: 50%; background: black; border: 2px solid #34a3a3; display: flex; align-items: center; justify-content: center; text-decoration: none;">
+                <ion-icon name="mail-outline" style="font-size: 24px; color: #34a3a3;"></ion-icon>
               </a>
             </div>
-            <button class="close-modal" onclick="closeSuccessModal()">Close</button>
+            <button class="close-modal" onclick="closeSuccessModal()" style="background: #34a3a3; color: white; border: none; padding: 12px 30px; border-radius: 5px; font-size: 1rem; font-weight: 600; cursor: pointer;">Close</button>
           </div>
         </div>
       </main>

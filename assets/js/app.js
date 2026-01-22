@@ -150,13 +150,20 @@ let trans = () => {
 const contactForm = document.getElementById("contactForm");
 const successModal = document.getElementById("successModal");
 
+console.log("Contact Form:", contactForm);
+console.log("Success Modal:", successModal);
+
 if (contactForm && successModal) {
   contactForm.addEventListener("submit", function (e) {
     e.preventDefault();
+    console.log("Form submitted!");
 
     // Get the user's name from the form
     const userName = document.getElementById("name").value.trim();
     const userNameSpan = document.getElementById("userName");
+    
+    console.log("User Name:", userName);
+    console.log("User Name Span:", userNameSpan);
     
     // Display personalized message with name
     if (userName && userNameSpan) {
@@ -166,8 +173,13 @@ if (contactForm && successModal) {
     }
 
     // Show success modal
+    console.log("Showing modal...");
     successModal.style.display = "flex";
+    successModal.style.opacity = "1";
+    successModal.style.visibility = "visible";
     document.body.style.overflow = "hidden";
+
+    console.log("Modal display:", successModal.style.display);
 
     // Reset form
     contactForm.reset();
@@ -179,12 +191,15 @@ if (contactForm && successModal) {
       closeSuccessModal();
     }
   });
+} else {
+  console.error("Form or Modal not found!");
 }
 
 function closeSuccessModal() {
   const modal = document.getElementById("successModal");
   if (modal) {
     modal.style.display = "none";
+    modal.style.visibility = "hidden";
     document.body.style.overflow = "auto";
   }
 }
